@@ -1,6 +1,8 @@
-koa2 ¿çÓò
+koa2 è·¨åŸŸ
 https://github.com/zadzbw/koa2-cors
-¡¾npm install --save koa2-cors¡¿
+ã€npm install --save koa2-corsã€‘
+
+
 
 
 
