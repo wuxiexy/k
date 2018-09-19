@@ -19,8 +19,10 @@ router.get('/', async (ctx, next) => {
 })
 
 router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
+  ctx.body = {
+      res: 'koa2 string'
+  }
+});
 
 router.get('/json', async (ctx, next) => {
   ctx.body = {
@@ -30,8 +32,7 @@ router.get('/json', async (ctx, next) => {
 
 router.get('/getJson', async (ctx,next) => {
     await cors();   // 允许跨域请求
-
     ctx.body = JSON.parse(fs.readFileSync('./static/material.json'));
 });
 
-module.exports = router
+module.exports = router;
