@@ -16,11 +16,13 @@ const cors = require('koa2-cors');
 // 设置跨域  refer: https://www.jianshu.com/p/5b3acded5182
 app.use(cors({
     origin: function (ctx) {
-        console.log(ctx.url);
-        if (ctx.url === '/test') {
+        let reg = new RegExp('/api/');      // 允许 /api/
+        // console.log(ctx.url);
+        if (reg.test(ctx.url)) {
             return "*"; // 允许来自所有域名请求
         }
-        return 'http://localhost:63342';    // 这样就能只允许 http://localhost:63342 这个域名的请求了
+        // return 'http://localhost:63342';    // 这样就能只允许 http://localhost:63342 这个域名的请求了
+        return false;
     },
 
     // 需要获取其他字段时，使用Access-Control-Expose-Headers，

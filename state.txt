@@ -1,8 +1,8 @@
-koa2 跨域
+﻿koa2 跨域
 https://github.com/zadzbw/koa2-cors
 【npm install --save koa2-cors】
 
-
+port 3000
 
 
 
