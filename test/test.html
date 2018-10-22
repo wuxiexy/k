@@ -8,39 +8,68 @@
 </head>
 <body>
 
-<p>测试方法：先start</p>
+<!--<p>测试方法：先start</p>-->
 
-<ul id="con"> </ul>
-<button id="btn">load</button>
+<p id="con"> </p>
+<button id="btn">load getJson</button>
+
+
+<p id="con2"> </p>
+<button id="btn2">load string</button>
+
+
+<p id="con3"> </p>
+<button id="btn3">load json</button>
+
+
+
 
 <script type="text/javascript" src="jquery-3.1.1.js"></script>
 <script type="text/javascript">
 
     var btn = document.getElementById('btn')
-        , con = document.getElementById('con');
+        , btn2 = document.getElementById('btn2')
+        , btn3 = document.getElementById('btn3')
+        , con = document.getElementById('con')
+        , con2 = document.getElementById('con2')
+        , con3 = document.getElementById('con3')
+    ;
 
     btn.addEventListener('click', function () {
         $.ajax({
-            // url: 'http://localhost:3000/getJson',
-            // url: 'http://localhost:3000/string',
-            url: 'http://localhost:3000/json',
+            url: 'http://localhost:3000/api/getJson',
+            // url: 'http://localhost:3000/api/string',
+            // url: 'http://localhost:3000/api/json',
             success: function (data) {
                 console.log(data);
-                /*var len = data.length
-                    , i = 0
-                    , str = ''
-                    , current
-                ;
-                for(i = 0;i < len; i++){
-                    current = data[i];
-                    str += '<li>地址：'+current["address"]+' - 时间：'+current["date"]+' - 名字：'+current["name"]+'</li>';
-                }*/
-                // con.innerHTML = str;
-
                 con.innerHTML = JSON.stringify(data);
             }
         });
     }, false);
+
+
+    btn2.addEventListener('click', function () {
+        $.ajax({
+            url: 'http://localhost:3000/api/string',
+            success: function (data) {
+                console.log(data);
+                con2.innerHTML = JSON.stringify(data);
+            }
+        });
+    }, false);
+
+
+    btn3.addEventListener('click', function () {
+        $.ajax({
+            url: 'http://localhost:3000/api/json',
+            success: function (data) {
+                console.log(data);
+                con3.innerHTML = JSON.stringify(data);
+            }
+        });
+    }, false);
+
+
 
 </script>
 

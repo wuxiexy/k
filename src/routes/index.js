@@ -12,25 +12,25 @@ let fs = require('fs');             // node 文件
 
 
 
-router.get('/', async (ctx, next) => {
+router.get('/api/', async (ctx, next) => {
   await ctx.render('index', {
     title: 'Hello Koa 2!'
   })
 })
 
-router.get('/string', async (ctx, next) => {
+router.get('/api/string', async (ctx, next) => {
   ctx.body = {
       res: 'koa2 string'
   }
 });
 
-router.get('/json', async (ctx, next) => {
+router.get('/api/json', async (ctx, next) => {
   ctx.body = {
     title: 'koa2 json'
   }
 });
 
-router.get('/getJson', async (ctx,next) => {
+router.get('/api/getJson', async (ctx,next) => {
     await cors();   // 允许跨域请求
     ctx.body = JSON.parse(fs.readFileSync('./static/material.json'));
 });
