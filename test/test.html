@@ -37,15 +37,10 @@
 
     btn.addEventListener('click', function () {
         $.ajax({
-<<<<<<< HEAD
             url: 'http://localhost:3000/api/getJson',
             // url: 'http://localhost:3000/api/string',
             // url: 'http://localhost:3000/api/json',
-=======
-            url: 'http://localhost:3000/getJson',
-            // url: 'http://localhost:3000/string',
-            // url: 'http://localhost:3000/json',
->>>>>>> 1cab1a6bf70729fcebed169ee3d28a5b03a161d0
+
             success: function (data) {
                 console.log(data);
                 con.innerHTML = JSON.stringify(data);

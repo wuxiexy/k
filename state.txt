@@ -4,6 +4,8 @@ https://github.com/zadzbw/koa2-cors
 
 port 3000
 
+open【http://localhost:3000/api/getJson】
+
 
 
 
